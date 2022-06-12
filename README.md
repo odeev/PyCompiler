@@ -5,6 +5,6 @@ This is an example of an interactive Python output script running in an Android 
   [`app/src/main/python/main.py`](https://github.com/4med/PyCompiler/blob/main/app/src/main/python/pyscript.py).
   You can replace this with your own code.
 * The Android activity which hosts it is in 
-  [`app/src/main/java/com/chaquo/python/console/MainActivity.java`](https://github.com/4med/PyCompiler/blob/master/app/src/main/java/com/chaquo/python/console/OutputActivity.java).
+  [`app/src/main/java/com/chaquo/python/console/MainActivity.java`](https://github.com/4med/PyCompiler/blob/main/app/src/main/java/com/compiler/py/OutputActivity.java).
 * The Chaquopy configuration is in 
-  [`app/build.gradle`](https://github.com/4med/PyCompiler/blob/master/app/build.gradle).
+  [`app/build.gradle`](https://github.com/4med/PyCompiler/blob/main/app/build.gradle).
