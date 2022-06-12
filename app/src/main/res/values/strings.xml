@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Py Compiler</string>
+    <string name="output">OutPut</string>
+    <string name="run">Run</string>
+    <string name="close">Close</string>
+    <string name="hello_world">print(\"Hello, World!\")</string>
+</resources>
