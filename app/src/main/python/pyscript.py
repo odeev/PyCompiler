@@ -4,63 +4,49 @@ import sys
 from os.path import dirname, join
 from com.chaquo.python import Python
 
-#get data here
+# Method That We Will Use
 
-def main(CodeAreaData):
+def main(Code):
 
-    #here we will first create text file then execute code and save output of that code in txt file...
-    #and finally return text file output data to java code and display in our textview...
+    # First We Will Execute The Code Then We Will Save It In txt File
+    # Then We Will Return The Output
 
-    #give directory path for txt file
-
+    # Directory Path For txt File
     file_dir = str(Python.getPlatform().getApplication().getFilesDir())
 
-    #give file name
-
+    # File Name
     filename = join(dirname(file_dir), 'file.txt')
 
-    #now to execute our code we will use stdout concept here...
-
-
+    # Executing Our Code Using stdout Concept
     try:
-        #first save a reference to the original standard output
-
+        # Reference To The Original Standard Output
         original_stdout = sys.stdout
-
-        #now open new file (file.txt) with intention to write data and change standard output to our file
-
+        
+        # Open New File (file.txt) With Intention To Write Data And Change Standard Output To Our File
         sys.stdout = open(filename, 'w', encoding = 'utf8', errors="ignore")
 
-        #now execute our code using exec() method
-
-        exec(CodeAreaData) # it will execute our code and save output in file
-
-        #example =>     exec("""print("hello")""")    output =>   hello --will we write in the file
-
-        #now close the file after writing data
-
+        # Execute The Code
+        exec(Code) # it will execute our code and save output in file
+        
+        # Closing The File After We Write The Data
         sys.stdout.close()
 
-        #reset the standard output to its original value
-
+        # Reset The Standard Output To Its Original Value
         sys.stdout = original_stdout
 
-        #open file and read output and save in variable
+        # Saving The Output From The File to The Variable
         output = open(filename, 'r').read()
 
-
-
     except Exception as e:
-
-        #to handle error
-        #if any error occur in the code like syntax error then take that error message
-        #in output variable to show on screen
-
+        
+        # Handling Errors
+        # We Will Save The Error Args In The Variable
+        
         sys.stdout = original_stdout
 
-        #take exception error in output
+        # Saving The Error In The Output Variable
 
         output = e
 
-    #finally return output
+    # Return The Output
     return str(output)
